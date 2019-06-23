@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: bjork;
+  src: url('assets/bjork.ttf') format('truetype');
+  font-display: fallback;
+}
+
+body {
+  background-color: #f3b395;
+}
+
+h1 {
+  font-family: bjork, sans-serif;;
+  font-weight: normal;
+  font-size: 5em;
+  color: cornsilk;
+}
+
+a {
+  font-family: sans-serif;
+  text-decoration: none;
+  color: cornsilk;
+  font-size: 0.8rem;
+}
