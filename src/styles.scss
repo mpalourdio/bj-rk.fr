@@ -1,12 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 @font-face {
   font-family: bjork;
-  src: url('assets/bjork.ttf') format('truetype');
   font-display: fallback;
+  src: url('assets/bjork.eot') format('embedded-opentype'),
+  url('assets/bjork.woff2') format('woff2'),
+  url('assets/bjork.woff') format('woff');
 }
 
 body {
-  background-color: #f3b395;
+  background: linear-gradient(to bottom, #3cdbc0 0%, #f3b395 45%);
+  margin: 0;
 }
 
 h1 {
@@ -14,6 +17,7 @@ h1 {
   font-weight: normal;
   font-size: 5em;
   color: cornsilk;
+  margin: 0;
 }
 
 a {
