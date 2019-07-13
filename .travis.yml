@@ -9,22 +9,34 @@ addons:
 
 matrix:
   fast_finish: true
+  allow_failures:
+    - os: osx
+
   include:
     - os: linux
       node_js: lts/*
+      env: DEPLOY=true
+      deploy:
+        provider: pages
+        skip_cleanup: true
+        github_token: $GITHUB_TOKEN
+        local_dir: dist/björkfr
+        keep_history: true
+        on:
+          branch: master
+
     - os: linux
       node_js: node
+
     - os: osx
       node_js: lts/*
       addons:
         firefox: latest
+
     - os: osx
       node_js: node
       addons:
         firefox: latest
-
-  allow_failures:
-    - os: osx
 
 before_install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash -s
@@ -35,3 +47,4 @@ script:
   - yarn lint
   - yarn audit
   - yarn test
+  - if [[ $DEPLOY = 'true' ]]; then yarn build --prod; fi
