@@ -20,7 +20,7 @@ matrix:
         provider: pages
         skip_cleanup: true
         github_token: $GITHUB_TOKEN
-        local_dir: dist/björkfr
+        local_dir: dist/bjorkfr
         keep_history: true
         on:
           branch: master
