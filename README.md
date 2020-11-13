@@ -1,3 +1,3 @@
-[![Build Status](https://travis-ci.org/mpalourdio/bj-rk.fr.svg?branch=master)](https://travis-ci.org/mpalourdio/bj-rk.fr)
+[![Build Status](https://github.com/mpalourdio/bj-rk.fr/workflows/CI/badge.svg?branch=master)](https://github.com/mpalourdio/bj-rk.fr/actions)
 
 [björk.fr](https://björk.fr)
