@@ -25,10 +25,10 @@ jobs:
         run: |
           yarn
           yarn lint
-          yarn audit
+          yarn audit:prod
           yarn test
           yarn e2e
-          yarn build --prod
+          yarn build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.7.1
