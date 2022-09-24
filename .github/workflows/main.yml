@@ -23,12 +23,12 @@ jobs:
 
       - name: Install and Build
         run: |
-          yarn
-          yarn lint
-          yarn audit:prod
-          yarn test
-          yarn e2e
-          yarn build
+          npm i
+          npm run lint
+          npm run audit:prod
+          npm test
+          npm run e2e
+          npm run build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.7.1
