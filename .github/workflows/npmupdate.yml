@@ -1,0 +1,47 @@
+name: npm update
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * 2' # Every Tuesday at midnight
+
+env:
+  FORCE_COLOR: 3
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    strategy:
+      max-parallel: 4
+      matrix:
+        node-version: [ 24.x ]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: '0'
+          token: ${{ secrets.GH_PR_PAT }}
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v6
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: Run npm update
+        run: |
+          npm update
+
+      - name: Commit && Push
+        run: |
+          git config --global user.email "mpalourdio@gmail.com"
+          git config --global user.name "Michel Palourdio"
+          git commit -am tmp
+          git reset --soft HEAD~2
+          git commit -am Arabadrengurinn
+          git push -f origin main
