@@ -22,7 +22,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           fetch-depth: '0'
           token: ${{ secrets.GH_PR_PAT }}
@@ -43,5 +43,5 @@ jobs:
           git config --global user.name "Michel Palourdio"
           git commit -am tmp
           git reset --soft HEAD~2
-          git commit -am Arabadrengurinn
+          git commit -am Búkolla
           git push -f origin main
