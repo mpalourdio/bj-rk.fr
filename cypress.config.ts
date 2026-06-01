@@ -1,10 +1,9 @@
 import { defineConfig } from 'cypress';
 import Browser = Cypress.Browser;
-
-const puppeteer = require('puppeteer');
+import puppeteer from "puppeteer";
 
 const findPuppeteer: () => Promise<Browser> = async () => {
-  const browserPath = puppeteer.executablePath();
+  const browserPath = await puppeteer.executablePath();
   const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
   const version = await browser.version();
   const majorVersion = parseInt(version.split('/')[1]);
