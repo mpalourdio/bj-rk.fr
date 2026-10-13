@@ -45,5 +45,5 @@ jobs:
           git config --global user.name "Michel Palourdio"
           git commit -am tmp
           git reset --soft HEAD~2
-          git commit -am Búkolla
+          git commit -am "Body Memory"
           git push -f origin main
